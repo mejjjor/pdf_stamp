@@ -13,16 +13,16 @@ do
 
 	CURRENT_TEMPLATE="template_empty.pdf"
 
-	if pdfgrep -i "ACTIVITES RELEVANT DES ANNEXES 8 et 10 au règlement de l'Assurance Chômage" $PAGE > /dev/null 2>&1; then
+	if pdfgrep -i "arrco" $PAGE > /dev/null 2>&1; then
 		CURRENT_TEMPLATE="template_assedic.pdf"
 	fi
 
 	if pdfgrep -i "Si vous n’êtes pas inscrit à notre Caisse, contactez-nous à l’adresse ci-dessus mentionnée afin que nous procédions à votre immatriculation." $PAGE > /dev/null 2>&1; then
 		CURRENT_TEMPLATE="template_conges_spectacles.pdf"
 	fi
-	
+
 	BACKGROUNDS_TEMPLATE=$"$BACKGROUNDS_TEMPLATE${CURRENT_TEMPLATE} "
-	
+
 	echo "Page $INDEX done with $CURRENT_TEMPLATE"
 done
 
