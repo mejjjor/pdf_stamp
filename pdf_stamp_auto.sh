@@ -32,7 +32,7 @@ echo "Stamp created"
 
 OUTPUT_FILE=${FILE::-4}_signed.pdf
 #create new pdf signed
-pdftk $FILE multibackground background.pdf output $OUTPUT_FILE
+pdftk $FILE multistamp background.pdf output $OUTPUT_FILE
 echo "Stamp applied"
 
 # clean
